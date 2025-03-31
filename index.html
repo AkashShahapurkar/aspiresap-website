@@ -6,6 +6,7 @@
     <title>ASPIRESAP - Excellence in Action</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/swiper.min.css">
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -23,17 +24,23 @@
             </ul>
         </nav>
     </header>
-    
+
+    <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="sap1.jpg"></div>
+        <div class="swiper-slide"><img src="sap2.jpg"></div>
+        <div class="swiper-slide"><img src="sap3.jpeg"></div>
+        ...
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
     <section id="home" class="hero">
-        <div class="slider">
-            <div class="slides">
-                <div class="slide"><img src="sap1.jpg" ></div>
-                <div class="slide"><img src="sap2.jpg" ></div>
-                <div class="slide"><img src="sap3.jpeg" ></div>
-                <div class="slide"><img src="sap6.jpg" ></div>
-                <div class="slide"><img src="sap7.webp" ></div>
-            </div>
-        </div>
         <div class="hero-content">
             <h1>Excellence in Action</h1>
             <p>Your trusted partner in SAP Implementations, Rollouts, and Migrations.</p>
@@ -95,5 +102,6 @@
     <footer>
         <p>&copy; 2025 ASPIRESAP. All rights reserved.</p>
     </footer>
+    <script src="path/to/swiper.min.js"></script>
 </body>
 </html>
