@@ -6,8 +6,8 @@
     <title>ASPIRESAP - Excellence in Action</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -27,14 +27,16 @@
     </header>
 
     <section id="home" class="hero">
+        <!-- Swiper Background -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="sap1.jpg" alt="Slide 1"></div>
-                <div class="swiper-slide"><img src="sap2.jpg" alt="Slide 2"></div>
-                <div class="swiper-slide"><img src="sap3.jpeg" alt="Slide 3"></div>
+                <div class="swiper-slide"><img src="sap1.jpg" alt="SAP Slide 1"></div>
+                <div class="swiper-slide"><img src="sap2.jpg" alt="SAP Slide 2"></div>
+                <div class="swiper-slide"><img src="sap3.jpeg" alt="SAP Slide 3"></div>
             </div>
-            <div class="swiper-pagination"></div>
         </div>
+
+        <!-- Content Overlay -->
         <div class="hero-content">
             <h1>Excellence in Action</h1>
             <p>Your trusted partner in SAP Implementations, Rollouts, and Migrations.</p>
@@ -43,74 +45,14 @@
     </section>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             new Swiper(".swiper-container", {
                 loop: true,
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
+                autoplay: { delay: 4000 },
+                effect: "fade",
+                speed: 1000
             });
         });
     </script>
-    <section id="services" class="services">
-        <h2>Our SAP Expertise</h2>
-        <div class="service-item">
-            <img src="ewm.jpg" alt="SAP EWM">
-            <h3>SAP EWM (Extended Warehouse Management)</h3>
-            <p>Enhancing warehouse efficiency with advanced automation, seamless integration, and optimized processes.</p>
-        </div>
-        <div class="service-item">
-            <img src="tm.jpg" alt="SAP TM">
-            <h3>SAP TM (Transportation Management)</h3>
-            <p>Streamlining logistics operations with smart route planning, freight cost optimization, and real-time tracking.</p>
-        </div>
-        <div class="service-item">
-            <img src="mm-wm.jpg" alt="SAP MM & WM">
-            <h3>SAP MM & WM (Materials & Warehouse Management)</h3>
-            <p>Optimizing inventory management, procurement, and storage to reduce costs and improve efficiency.</p>
-        </div>
-    </section>
-    
-    <section id="industries" class="industries">
-        <h2>Industries We Serve</h2>
-        <ul>
-            <li><img src="retail.jpg" alt="Retail"> Retail</li>
-            <li><img src="pharma.jpg" alt="Pharma"> Pharma</li>
-            <li><img src="manufacturing.jpg" alt="Manufacturing"> Manufacturing</li>
-            <li><img src="cpg.jpg" alt="CPG"> Consumer Packaged Goods (CPG)</li>
-        </ul>
-    </section>
-    
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>We are expert consultants with extensive experience working with clients across the globe. Our team of 10+ highly experienced consultants specializes in SAP Functional and Technical knowledge, delivering high-value solutions to businesses worldwide.</p>
-    </section>
-    
-    <section id="problem-solving" class="problem-solving">
-        <h2>How We Address Your Business Challenges</h2>
-        <ul>
-            <li><strong>Process Optimization:</strong> Reducing inefficiencies in supply chain workflows.</li>
-            <li><strong>Seamless Migrations:</strong> Smooth transition to S/4HANA with minimal disruptions.</li>
-            <li><strong>Automation & Integration:</strong> AI-driven solutions to enhance warehouse and logistics operations.</li>
-            <li><strong>Customized SAP Solutions:</strong> Tailoring systems to meet unique business requirements.</li>
-        </ul>
-    </section>
-    
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Phone: <a href="tel:9977447974">9977447974</a></p>
-        <p>Email: <a href="mailto:info@aspiresap.com">info@aspiresap.com</a></p>
-        <p>Office Address: CM 45, Indore</p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 ASPIRESAP. All rights reserved.</p>
-    </footer>
-    <script src="path/to/swiper.min.js"></script>
 </body>
 </html>
