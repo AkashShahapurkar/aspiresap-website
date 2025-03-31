@@ -77,6 +77,11 @@ nav ul li a:hover {
 }
 
 /*swiper */
+.container{
+    width:100%;
+    height:100vh;
+    background:#f4f4f4;
+}
 .swiper {
     width: 80%;
     height: fit-content;
