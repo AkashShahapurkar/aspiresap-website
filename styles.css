@@ -37,16 +37,15 @@ nav a {
     overflow: hidden;
 }
 
-.slider {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+.swiper-container {
+    width: 600px;
+    height: 300px;
 }
 
-.slides {
+.swiper-wrapper {
     display: flex;
-    width: 500%;
+    width: 80%;
+    height: fit-content;
     animation: slideAnimation 15s infinite;
 }
 
@@ -55,9 +54,8 @@ nav a {
     flex: 1;
 }
 
-.slide img {
+.swiper-slide img {
     width: 100%;
-    height: 100vh;
     object-fit: cover;
 }
 
