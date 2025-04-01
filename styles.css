@@ -3,26 +3,32 @@
             padding: 0;
             box-sizing: border-box;
         }
-        body {
+        body, html {
+            width: 100%;
+            height: 100%;
             font-family: Arial, sans-serif;
             overflow: hidden;
         }
         .slideshow {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            animation: slideshow 12s infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        @keyframes slideshow {
-            0% { background-image: url('image1.jpg'); }
-            33% { background-image: url('image2.jpg'); }
-            66% { background-image: url('image3.jpg'); }
-            100% { background-image: url('image1.jpg'); }
+        .slideshow img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .slideshow img.active {
+            opacity: 1;
         }
         .nav {
             position: fixed;
