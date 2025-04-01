@@ -88,10 +88,7 @@ nav ul li a:hover {
 
 .swiper-slide img{
     width: 100%;
-    height: fit-content;
-    padding: 200px 0%;
-  
-    
+    height: fit-content;  
 }
 /* Sections */
 section {
