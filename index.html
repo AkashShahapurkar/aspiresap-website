@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASPIRESAP - Excellence in Action</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="path/to/swiper.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,103 +24,34 @@
         </nav>
     </header>
     <section class="container">
-            <div class="swiper">
-            <!-- Additional required wrapper -->
+        <div class="swiper">
             <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide"><img src = "sap1.jpg"></div>
-                <div class="swiper-slide"><img src = "sap2.jpg"></div>
-                <div class="swiper-slide"><img src = "sap3.jpeg"></div>
-                ...
+                <div class="swiper-slide"><img src="sap1.jpg" alt="SAP Image 1"></div>
+                <div class="swiper-slide"><img src="sap2.jpg" alt="SAP Image 2"></div>
+                <div class="swiper-slide"><img src="sap3.jpeg" alt="SAP Image 3"></div>
             </div>
-            <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
-        
-            <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-           
         </div>
     </section>   
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Excellence in Action</h1>
-            <p>Your trusted partner in SAP Implementations, Rollouts, and Migrations.</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
-        </div>
-    </section>
-    
-    <section id="services" class="services">
-        <h2>Our SAP Expertise</h2>
-        <div class="service-item">
-            <h3>SAP EWM (Extended Warehouse Management)</h3>
-            <p>Enhancing warehouse efficiency with advanced automation, seamless integration, and optimized processes.</p>
-        </div>
-        <div class="service-item">
-            <h3>SAP TM (Transportation Management)</h3>
-            <p>Streamlining logistics operations with smart route planning, freight cost optimization, and real-time tracking.</p>
-        </div>
-        <div class="service-item">
-            <h3>SAP MM & WM (Materials & Warehouse Management)</h3>
-            <p>Optimizing inventory management, procurement, and storage to reduce costs and improve efficiency.</p>
-        </div>
-    </section>
-    
-    <section id="industries" class="industries">
-        <h2>Industries We Serve</h2>
-        <ul>
-            <li>Retail</li>
-            <li>Pharma</li>
-            <li>Manufacturing</li>
-            <li>Consumer Packaged Goods (CPG)</li>
-        </ul>
-    </section>
-    
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>We are expert consultants with extensive experience working with clients across the globe. Our team of 10+ highly experienced consultants specializes in SAP Functional and Technical knowledge, delivering high-value solutions to businesses worldwide.</p>
-    </section>
-    
-    <section id="problem-solving" class="problem-solving">
-        <h2>How We Address Your Business Challenges</h2>
-        <ul>
-            <li><strong>Process Optimization:</strong> Reducing inefficiencies in supply chain workflows.</li>
-            <li><strong>Seamless Migrations:</strong> Smooth transition to S/4HANA with minimal disruptions.</li>
-            <li><strong>Automation & Integration:</strong> AI-driven solutions to enhance warehouse and logistics operations.</li>
-            <li><strong>Customized SAP Solutions:</strong> Tailoring systems to meet unique business requirements.</li>
-        </ul>
-    </section>
-    
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Phone: <a href="tel:9977447974">9977447974</a></p>
-        <p>Email: <a href="mailto:info@aspiresap.com">info@aspiresap.com</a></p>
-        <p>Office Address: CM 45, Indore</p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 ASPIRESAP. All rights reserved.</p>
-    </footer>
-<script>
-  var mySwiper = new Swiper ('.swiper-container', {
-      autoplay{
-      delay:3000,
-      disableOnInteraction: false,
-      },
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  })
-  </script>
-    <script src="path/to/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper', {
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    </script>
 </body>
 </html>
