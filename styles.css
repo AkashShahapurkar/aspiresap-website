@@ -7,6 +7,18 @@ body {
     color: #333;
 }
 
+/* Scroll Animation */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Header Styles */
 header {
     display: flex;
@@ -18,7 +30,7 @@ header {
 }
 
 .logo img {
-    height: 70px;
+    height: 50px;
 }
 
 nav ul {
@@ -75,7 +87,7 @@ nav ul li a:hover {
 .cta-button:hover {
     background-color: #008fcc;
 }
-/* SAP Services Section */
+
 /* Services Section */
 #services {
     text-align: center;
@@ -83,190 +95,70 @@ nav ul li a:hover {
     background-color: #f4f8ff;
 }
 
-#services h2 {
-    font-size: 2.5rem;
-    color: #004080;
-    margin-bottom: 40px;
-}
-
-.services-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* Service Item */
-.service-item {
-    position: relative;
-    width: 100%;
-    max-width: 350px; /* Ensures uniform size */
-    height: 300px; /* Fixed height to maintain aspect ratio */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-}
-
-/* Text Overlay */
-.service-text {
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better readability */
-    color: white;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    transition: background 0.3s ease;
-}
-
-/* Hover Effect */
-.service-item:hover .service-text {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-/* Text Styling */
-.service-text h3 {
-    margin: 0 0 10px;
-    font-size: 1.5rem;
-}
-
-.service-text p {
-    margin: 0;
-    font-size: 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .services-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service-item {
-        max-width: 90%;
-        height: 250px;
-    }
-}
-
-
-/* Sections */
-/* Initial State: Hide Sections */
-.section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* Active State: Fade In */
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-section {
-    padding: 60px 10%;
-    text-align: center;
-}
-
-h2 {
+.services h2 {
     font-size: 2.5rem;
     color: #004080;
     margin-bottom: 20px;
 }
 
-/* Flip Card Section */
-.flip-card-section {
-    padding: 50px 10%;
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-h2 {
-    color: #004080;
-    margin-bottom: 30px;
+.service-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-text {
+    color: white;
+    text-align: left;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+}
+
+/* Flip Cards - Business Solutions */
+.flip-card-section {
+    text-align: center;
+    padding: 50px 10%;
 }
 
 .card-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
-.slideshow-container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.slideshow-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    max-height: 500px; /* Adjust as needed */
-}
-
-/* Business Solutions Section */
-#business-solutions {
-    text-align: center;
-    padding: 60px 10%;
-    background-color: #f4f8ff;
-}
-
-/* Heading */
-/* Business Solutions Section */
-#business-solutions {
-    text-align: center;
-    padding: 60px 10%;
-    background-color: #f4f8ff;
-}
-
-/* Heading */
-#business-solutions h2 {
-    font-size: 2.5rem;
-    color: #004080;
-    margin-bottom: 40px;
-}
-
-/* Flip Cards Container */
-.flip-cards-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px; /* Adds space between cards */
-    align-items: stretch;
-}
-
-/* Individual Flip Card */
 .flip-card {
-    width: 220px; /* Adjusted for better alignment */
-    height: 260px; 
+    width: 220px;
+    height: 250px;
     perspective: 1000px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
 }
 
-/* Flip Card Inner */
 .flip-card-inner {
     width: 100%;
     height: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    position: relative;
 }
 
-/* Flip Effect on Hover */
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-/* Front and Back of Flip Card */
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -277,120 +169,45 @@ h2 {
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    font-size: 1rem;
-    text-align: center;
 }
 
-/* Front Side */
 .flip-card-front {
     background-color: #004080;
     color: white;
+    font-size: 1.2rem;
 }
 
-/* Back Side */
 .flip-card-back {
     background-color: #00bfff;
     color: white;
+    font-size: 1rem;
     transform: rotateY(180deg);
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .flip-card {
-        width: 200px;
-        height: 250px;
-    }
-}
-
-@media (max-width: 992px) {
-    .flip-cards-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .flip-card {
-        width: 180px;
-        height: 240px;
-    }
-}
-
-@media (max-width: 768px) {
-    .flip-card {
-        width: 160px;
-        height: 220px;
-    }
-}
-
-@media (max-width: 480px) {
-    .flip-card {
-        width: 100%;
-        max-width: 200px;
-        height: 230px;
-    }
 }
 
 /* Industries Section */
 #industries {
     text-align: center;
-    padding: 60px 10%;
-    background-color: #f4f8ff;
 }
 
-#industries h2 {
-    font-size: 2.5rem;
-    color: #004080;
-    margin-bottom: 40px;
-}
-
-/* Industries Container */
 .industries-container {
     display: flex;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 30px;
 }
 
-/* Industry Item */
 .industry-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    max-width: 150px;
 }
 
-/* Circular Images */
 .industry-item img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image fills the circle without stretching */
-    border: 4px solid #004080; /* Optional: Adds a border */
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Hover Effect */
-.industry-item img:hover {
-    transform: scale(1.1);
-}
-
-/* Industry Name */
-.industry-item p {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .industries-container {
-        gap: 20px;
-    }
-    .industry-item img {
-        width: 100px;
-        height: 100px;
-    }
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Section */
@@ -402,56 +219,6 @@ h2 {
 
 .contact a:hover {
     text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .slideshow-container img {
-        max-height: 300px; /* Reduce height for tablets */
-    }
-    
-   .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .flip-card {
-        max-width: 90%;
-        height: 280px;
-        margin: 15px 0; /* Adds more spacing between cards */
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .slideshow-container img {
-        max-height: 200px; /* Even smaller for phones */
-    }
-
-    .card-container {
-        flex-direction: column; /* Stack flip cards on small screens */
-        align-items: center;
-    }
-
-    .flip-card {
-        width: 90%; /* Take up most of the screen */
-        max-width: 250px;
-        height: 280px;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-content p {
-        font-size: 0.9rem;
-    }
 }
 
 /* Footer */
