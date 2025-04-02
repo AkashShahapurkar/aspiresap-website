@@ -248,7 +248,7 @@ h2 {
     padding: 10px;
 }
 
-.industries ul, .problem-solving ul {
+.problem-solving ul {
     background: white;
     padding: 20px;
     margin: 15px 0;
@@ -256,19 +256,68 @@ h2 {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.industries ul {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    list-style: none;
+/* Industries Section */
+#industries {
+    text-align: center;
+    padding: 60px 10%;
+    background-color: #f4f8ff;
 }
 
-.industries ul li {
-    padding: 10px 20px;
-    background-color: #00bfff;
-    color: white;
-    border-radius: 5px;
+#industries h2 {
+    font-size: 2.5rem;
+    color: #004080;
+    margin-bottom: 40px;
+}
+
+/* Industries Container */
+.industries-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Industry Item */
+.industry-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 150px;
+}
+
+/* Circular Images */
+.industry-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fills the circle without stretching */
+    border: 4px solid #004080; /* Optional: Adds a border */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.industry-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Industry Name */
+.industry-item p {
+    margin-top: 10px;
+    font-size: 1.2rem;
     font-weight: bold;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .industries-container {
+        gap: 20px;
+    }
+    .industry-item img {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 /* Contact Section */
