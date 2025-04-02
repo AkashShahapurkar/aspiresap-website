@@ -210,6 +210,63 @@ nav ul li a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* SAP Solutions - Masonry Layout */
+.sap-solutions {
+    padding: 60px 10%;
+    background-color: #f4f8ff;
+    text-align: center;
+}
+
+.sap-solutions h2 {
+    font-size: 2.5rem;
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+/* Masonry Grid */
+.solutions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Solution Card */
+.solution-item {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.solution-item:hover {
+    transform: scale(1.05);
+}
+
+.solution-item img {
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.solution-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .solutions-container {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+}
+
 /* Contact Section */
 .contact a {
     color: #004080;
