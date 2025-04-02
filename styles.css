@@ -218,6 +218,14 @@ h2 {
 }
 
 /* Heading */
+/* Business Solutions Section */
+#business-solutions {
+    text-align: center;
+    padding: 60px 10%;
+    background-color: #f4f8ff;
+}
+
+/* Heading */
 #business-solutions h2 {
     font-size: 2.5rem;
     color: #004080;
@@ -228,20 +236,20 @@ h2 {
 .flip-cards-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allows wrapping if needed */
-    gap: 20px; /* Proper spacing between cards */
-    align-items: stretch; /* Ensures consistent card height */
+    flex-wrap: wrap;
+    gap: 20px; /* Adds space between cards */
+    align-items: stretch;
 }
 
 /* Individual Flip Card */
 .flip-card {
-    width: 220px; /* Reduced size */
-    height: 260px; /* Adjusted height */
+    width: 220px; /* Adjusted for better alignment */
+    height: 260px; 
     perspective: 1000px;
-    flex: 1 1 220px; /* Ensures proper alignment */
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 /* Flip Card Inner */
@@ -288,27 +296,34 @@ h2 {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+    .flip-card {
+        width: 200px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 992px) {
     .flip-cards-container {
-        flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+        flex-wrap: wrap;
         justify-content: center;
     }
     .flip-card {
-        width: 200px; /* Further reduced size for tablets */
-        height: 250px;
+        width: 180px;
+        height: 240px;
     }
 }
 
 @media (max-width: 768px) {
     .flip-card {
-        width: 180px; /* Smaller cards for mobile */
-        height: 240px;
+        width: 160px;
+        height: 220px;
     }
 }
 
 @media (max-width: 480px) {
     .flip-card {
-        width: 100%; /* Full width on small screens */
+        width: 100%;
         max-width: 200px;
         height: 230px;
     }
