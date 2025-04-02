@@ -30,20 +30,20 @@ document.querySelectorAll('.flip-card').forEach(card => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll(".section");
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll("section");
+    
+    function checkScroll() {
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (sectionTop < windowHeight - 50) {
+                section.classList.add("visible");
             }
         });
-    }, { threshold: 0.2 });
+    }
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    window.addEventListener("scroll", checkScroll);
+    checkScroll();
 });
 
