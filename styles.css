@@ -18,10 +18,7 @@ header {
 }
 
 .logo img {
-    height: 100px;
-}
-.logo p {
-    font-size: 1rem;
+    height: 70px;
 }
 
 nav ul {
@@ -79,6 +76,7 @@ nav ul li a:hover {
     background-color: #008fcc;
 }
 /* SAP Services Section */
+/* Services Section */
 #services {
     text-align: center;
     padding: 60px 10%;
@@ -91,57 +89,70 @@ nav ul li a:hover {
     margin-bottom: 40px;
 }
 
-/* Services Grid */
 .services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
-/* Service Item with Background Image */
+/* Service Item */
 .service-item {
     position: relative;
+    width: 100%;
+    max-width: 350px; /* Ensures uniform size */
+    height: 300px; /* Fixed height to maintain aspect ratio */
     background-size: cover;
     background-position: center;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-repeat: no-repeat;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    display: flex;
+    align-items: flex-end;
 }
 
 /* Text Overlay */
 .service-text {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better readability */
     color: white;
-    text-align: center;
     padding: 20px;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    opacity: 0.9;
-    transition: 0.3s;
+    box-sizing: border-box;
+    text-align: left;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: background 0.3s ease;
 }
 
 /* Hover Effect */
 .service-item:hover .service-text {
-    opacity: 1;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Text Styling */
+.service-text h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+}
+
+.service-text p {
+    margin: 0;
+    font-size: 1rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .services-container {
-        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        flex-direction: column;
+        align-items: center;
     }
-    
+
     .service-item {
-        height: 200px;
+        max-width: 90%;
+        height: 250px;
     }
 }
+
 
 /* Sections */
 section {
