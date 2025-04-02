@@ -7,18 +7,6 @@ body {
     color: #333;
 }
 
-/* Scroll Animation */
-section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.6s ease-in-out;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* Header Styles */
 header {
     display: flex;
@@ -61,7 +49,6 @@ nav ul li a:hover {
     text-align: center;
     color: white;
     padding: 20px;
-    background-color: #002c5f;
 }
 
 .hero-content h1 {
@@ -95,57 +82,57 @@ nav ul li a:hover {
     background-color: #f4f8ff;
 }
 
-.services h2 {
+#services h2 {
     font-size: 2.5rem;
     color: #004080;
     margin-bottom: 20px;
 }
 
 .services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
 .service-item {
     position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px;
     background-size: cover;
     background-position: center;
-    width: 300px;
-    height: 250px;
     display: flex;
     align-items: flex-end;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: white;
 }
 
 .service-text {
-    color: white;
-    text-align: left;
-    padding: 15px;
     background: rgba(0, 0, 0, 0.6);
-    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
 }
 
-/* Flip Cards - Business Solutions */
+/* Flip Card Section */
 .flip-card-section {
-    text-align: center;
     padding: 50px 10%;
+    text-align: center;
 }
 
 .card-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .flip-card {
-    width: 220px;
+    background-color: transparent;
+    width: 100%;
+    max-width: 220px;
     height: 250px;
     perspective: 1000px;
+    margin: 10px;
 }
 
 .flip-card-inner {
@@ -174,7 +161,7 @@ nav ul li a:hover {
 .flip-card-front {
     background-color: #004080;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .flip-card-back {
@@ -182,11 +169,13 @@ nav ul li a:hover {
     color: white;
     font-size: 1rem;
     transform: rotateY(180deg);
+    padding: 10px;
 }
 
-/* Industries Section */
+/* Industry Section */
 #industries {
     text-align: center;
+    padding: 60px 10%;
 }
 
 .industries-container {
@@ -197,85 +186,16 @@ nav ul li a:hover {
 }
 
 .industry-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    width: 120px;
 }
 
 .industry-item img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* SAP Solutions - Masonry Layout */
-.sap-solutions {
-    padding: 60px 10%;
-    background-color: #f4f8ff;
-    text-align: center;
-}
-
-.sap-solutions h2 {
-    font-size: 2.5rem;
-    color: #004080;
-    margin-bottom: 20px;
-}
-
-/* Masonry Grid */
-.solutions-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* Solution Card */
-.solution-item {
-    background-color: #004080;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.solution-item:hover {
-    transform: scale(1.05);
-}
-
-.solution-item img {
-    width: 80px; /* Adjust size as needed */
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-.solution-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .solutions-container {
-        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    }
-}
-
-/* Contact Section */
-.contact a {
-    color: #004080;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.contact a:hover {
-    text-decoration: underline;
+    border: 3px solid #004080;
 }
 
 /* Footer */
