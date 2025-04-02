@@ -12,7 +12,9 @@ function showSlides() {
         slideIndex = 1;
     }
     
-    slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].style.display = "flex";
+    slides[slideIndex - 1].style.justifyContent = "center";
+    slides[slideIndex - 1].style.alignItems = "center";
     setTimeout(showSlides, 4000); // Change image every 4 seconds
 }
 
