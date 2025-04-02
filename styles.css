@@ -18,7 +18,10 @@ header {
 }
 
 .logo img {
-    height: 50px;
+    height: 100px;
+}
+.logo p {
+    font-size: 1rem;
 }
 
 nav ul {
@@ -103,6 +106,17 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.service-item h3{
+    font-size: 2.5rem;
+    color: white;
+    text-align: left;
+}
+
+service-item p{
+    font-size: 0.9rem;
+    color: white;
+    text-align: left;
+}
 .service-bg {
     background-size: cover;
     background-position: center;
