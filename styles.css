@@ -76,60 +76,64 @@ nav ul li a:hover {
     background-color: #008fcc;
 }
 /* Services section */
-/* SAP Services Section */
-.sap-services {
+.services {
+    text-align: center;
     padding: 60px 10%;
     background-color: #f4f8ff;
-    text-align: center;
 }
 
-.sap-services h2 {
+.services h2 {
     font-size: 2.5rem;
     color: #004080;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
+/* Services Grid */
 .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: center;
-    align-items: stretch;
 }
 
+/* Service Item */
 .service-item {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.service-item img {
-    width: 100%;
+.service-bg {
+    background-size: cover;
+    background-position: center;
     height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
 }
 
-.service-item:hover img {
-    transform: scale(1.05);
-}
-
-.service-item h3 {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+/* Text Positioning */
+.service-text {
     color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 5px 10px;
+    text-align: left;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 5px;
 }
 
-.service-item p {
-    display: none;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+    .service-bg {
+        height: 200px;
+    }
 }
+
 
 /* Sections */
 section {
