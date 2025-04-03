@@ -35,9 +35,27 @@ header {
 
 nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 20px; /* Adds spacing between all links */
+}
+
+nav ul li:last-child {
+    margin-left: auto; /* Pushes "Contact Us" to the right */
+}
+
+.contact-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 30px; /* Adds extra space before the button */
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
 }
 
 nav ul li a {
