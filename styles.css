@@ -1,8 +1,14 @@
 /* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
+/* Ensure all sections take full width */
+body, html {
     margin: 0;
     padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f8ff;
     color: #333;
 }
@@ -25,7 +31,7 @@ header {
     font-size:10px;
     font-weight: bold;
     color: white;
-    margin-left: 30px;
+    margin-left: 29px;
 }
 
 nav ul {
@@ -51,7 +57,7 @@ nav ul li a:hover {
 .hero {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +78,7 @@ nav ul li a:hover {
 .slide {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     opacity: 0;
@@ -94,8 +100,12 @@ nav ul li a:hover {
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
 }
 
 .cta-button {
@@ -113,6 +123,15 @@ nav ul li a:hover {
 .cta-button:hover {
     background: #ffaa00;
 }
+
+/* Ensure containers are responsive */
+.container, .section {
+    width: 100%;
+    max-width: 1200px; /* Adjust max-width for best fit */
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* SAP Services Section */
 /* Services Section */
 #services {
