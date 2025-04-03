@@ -383,32 +383,6 @@ h2 {
     transform: rotateY(180deg);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .flip-cards-container {
-        flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
-        justify-content: center;
-    }
-    .flip-card {
-        width: 200px; /* Further reduced size for tablets */
-        height: 250px;
-    }
-}
-
-@media (max-width: 768px) {
-    .flip-card {
-        width: 180px; /* Smaller cards for mobile */
-        height: 240px;
-    }
-}
-
-@media (max-width: 480px) {
-    .flip-card {
-        width: 100%; /* Full width on small screens */
-        max-width: 200px;
-        height: 230px;
-    }
-}
 
 /* Industries Section */
 #industries {
@@ -477,17 +451,6 @@ h2 {
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .industries-container {
-        gap: 20px;
-    }
-    .industry-item img {
-        width: 100px;
-        height: 100px;
-    }
 }
 
 /* Contact Section */
@@ -587,6 +550,31 @@ h2 {
     background: #0056b3;
 }
 
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#backToTop:hover {
+    background-color: #0056b3;
+}
+
+/* Show button when scrolled down */
+.show {
+    display: block !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .contact-container {
@@ -649,6 +637,44 @@ h2 {
 
     .hero-content p {
         font-size: 0.9rem;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .industries-container {
+        gap: 20px;
+    }
+    .industry-item img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .flip-cards-container {
+        flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+        justify-content: center;
+    }
+    .flip-card {
+        width: 200px; /* Further reduced size for tablets */
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .flip-card {
+        width: 180px; /* Smaller cards for mobile */
+        height: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-card {
+        width: 100%; /* Full width on small screens */
+        max-width: 200px;
+        height: 230px;
     }
 }
 
