@@ -1,22 +1,19 @@
-let slideIndex = 0;
+let slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
 
 function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-    
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    
-    slides[slideIndex - 1].style.display = "flex";
-    slides[slideIndex - 1].style.justifyContent = "center";
-    slides[slideIndex - 1].style.alignItems = "center";
-    setTimeout(showSlides, 4000); // Change image every 4 seconds
+    slides.forEach((slide, index) => {
+        slide.classList.remove("active");
+        if (index === currentSlide) {
+            slide.classList.add("active");
+        }
+    });
+    currentSlide = (currentSlide + 1) % slides.length;
 }
+
+// Start the slideshow
+setInterval(showSlides, 4000);
+showSlides();
 
 document.addEventListener("DOMContentLoaded", showSlides);
 
