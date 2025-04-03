@@ -21,6 +21,13 @@ header {
     height: 70px;
 }
 
+.logo-text {
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+    margin-top: 5px;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
