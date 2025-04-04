@@ -268,6 +268,10 @@ section h2 {
 #values { animation-delay: 0.6s; }
 
 /*Industries section*/
+#industries {
+  margin-top: 4rem; /* You can adjust this value */
+}
+
 .industries-container {
     display: flex;
     justify-content: center;
