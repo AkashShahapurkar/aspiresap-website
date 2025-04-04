@@ -60,3 +60,20 @@ window.onscroll = function () {
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const vmvBoxes = document.querySelectorAll(".vmv-box");
+
+    function checkScroll() {
+        vmvBoxes.forEach((box) => {
+            const boxTop = box.getBoundingClientRect().top;
+            if (boxTop < window.innerHeight - 50) {
+                box.style.opacity = "1";
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll();
+});
+
