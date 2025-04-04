@@ -30,7 +30,7 @@ header {
 .logo-text {
     font-size: 14px;
     text-transform: lowercase;
-    color: #333;
+    color: white;
     margin-top: 5px;
 }
 
@@ -44,6 +44,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
+    position: center;
 }
 
 nav ul li a {
