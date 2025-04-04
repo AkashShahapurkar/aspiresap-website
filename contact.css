@@ -29,6 +29,9 @@
 
 /* Left Side: Contact Info */
 .contact-info {
+    position: relative;
+    top: -20px; /* Move text upwards */
+    padding-top: 20px; /* Adjust if needed */
     flex: 1;
     padding: 40px;
     color: white;
