@@ -1,21 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const slidesWrapper = document.querySelector('.slides-wrapper');
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
 
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.remove('active');
-        });
-        slides[index].classList.add('active');
-    }
-
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
+        slidesWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
 
-    setInterval(nextSlide, 3000); // Images change every 3 seconds (faster)
-    showSlide(currentSlide);
+    setInterval(nextSlide, 3000);
 });
     /*** Flip Card Hover Effect ***/
     document.querySelectorAll('.flip-card').forEach(card => {
