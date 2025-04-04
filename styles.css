@@ -17,34 +17,32 @@ header {
 }
 
 /* Logo Section */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Space between logo and text */
-}
-
-.logo img {
-    height: 60px; /* Adjust logo size */
-}
-
-.logo-text-container {
+/* Logo Container */
+.logo-container {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center-align logo, name, and tagline */
+    text-align: center;
 }
 
+/* Logo Image */
+.logo {
+    height: 60px; /* Adjust size as needed */
+}
+
+/* Company Name */
 .company-name {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
-    color: #fff; /* Adjust text color */
-    margin: 0;
+    color: #fff; /* White text */
 }
 
+/* Tagline */
 .tagline {
-    font-size: 10px;
-    color: #ddd; /* Light shade for tagline */
-    margin: 0;
+    font-size: 9px;
+    color: #ddd; /* Light grey */
+    margin-top: 1px;
 }
-
 
 nav ul {
     list-style: none;
