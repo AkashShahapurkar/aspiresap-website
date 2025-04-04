@@ -2,8 +2,8 @@
 body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 body {
@@ -34,21 +34,18 @@ header {
 }
 
 nav ul {
+    list-style: none;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    gap: 20px; /* Adds spacing between all links */
 }
 
 nav ul li:last-child {
-    margin-left: auto;
-    background: blue;
-    padding: 10px 15px;
-    border-radius: 5px;
-    color: white;
+    margin-left: auto; /* Pushes "Contact Us" to the right */
 }
 
 .contact-button {
+    background-color: #007bff;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -79,50 +76,36 @@ nav ul li a:hover {
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
-    background: url('sap1.jpg') no-repeat center center/cover;
-    animation: heroSlider 12s infinite;
+    overflow: hidden;
 }
 
-
-.slide {
-    min-width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-slides {
+.hero .slideshow-container {
     position: absolute;
     width: 100%;
     height: 100%;
-    display: flex;
-    animation: slideAnimation 15s infinite;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
-@keyframes slideAnimation {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-100%); }
-    66% { transform: translateX(-200%); }
-    100% { transform: translateX(0); }
-}
-@keyframes heroSlider {
-    0%, 100% { background-image: url('sap1.jpg'); }
-    33% { background-image: url('sap2.jpg'); }
-    66% { background-image: url('sap3.jpeg'); }
-}
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
 
-.hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+.slide.active {
+    opacity: 1;
 }
+
 .overlay {
     position: absolute;
     width: 100%;
@@ -134,28 +117,29 @@ nav ul li a:hover {
 }
 
 .hero-content {
-     background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
 }
 
 .cta-button {
-   padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ffcc00;
+    color: #004080;
     text-decoration: none;
+    font-weight: bold;
     border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
-}
-/* Fix Missing Sections */
-.about, .industries {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    width: 100%;
+    background: #ffaa00;
 }
 
 /* Ensure containers are responsive */
@@ -413,9 +397,8 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 50px 20px;
-    width: 100%;
 }
 
 .industries-container, .services-container {
@@ -484,13 +467,14 @@ h2 {
 .contact-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 900px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form {
-    width: 50%;
-}
 /* Left Side - Company Info */
 .contact-info {
     width: 40%;
@@ -537,7 +521,7 @@ h2 {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    text-align: left;
+    text-align: right;
 }
 
 .form-group input,
@@ -572,12 +556,16 @@ h2 {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 10px 15px;
-    background: blue;
+    background-color: #007bff;
     color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
     border-radius: 5px;
     display: none;
-    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 #backToTop:hover {
