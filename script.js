@@ -2,9 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const slidesWrapper = document.querySelector('.slides-wrapper');
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
+    const totalSlides = slides.length;
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
+        currentSlide = (currentSlide + 1) % totalSlides;
         slidesWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
 
