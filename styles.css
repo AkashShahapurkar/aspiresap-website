@@ -88,7 +88,7 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     display: flex;
-    animation: slideShow 12s infinite;
+    animation: slideShow 9s infinite;
 }
 
 .slide {
@@ -98,7 +98,7 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    animation: fade 4s infinite;
+    animation: fade 3s infinite;
 }
 
 /* Overlay for dark effect */
@@ -108,7 +108,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: white; /* Dark overlay */
 }
 
 /* Hero Content */
