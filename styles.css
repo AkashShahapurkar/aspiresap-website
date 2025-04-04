@@ -1,3 +1,4 @@
+/* General Styles */
 /* Ensure all sections take full width */
 body, html {
     margin: 0;
@@ -35,27 +36,9 @@ header {
 
 nav ul {
     list-style: none;
+    padding: 0;
     display: flex;
-    align-items: center;
-    gap: 20px; /* Adds spacing between all links */
-}
-
-nav ul li:last-child {
-    margin-left: auto; /* Pushes "Contact Us" to the right */
-}
-
-.contact-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 30px; /* Adds extra space before the button */
-}
-
-.contact-button:hover {
-    background-color: #0056b3;
+    gap: 20px;
 }
 
 nav ul li a {
@@ -123,7 +106,6 @@ nav ul li a:hover {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    z-index: 2;
 }
 
 .cta-button {
@@ -154,8 +136,8 @@ nav ul li a:hover {
 /* Services Section */
 #services {
     text-align: center;
-    padding: 60px 50px 10%;
-    background-color: #186aa8;
+    padding: 60px 10%;
+    background-color: #f4f8ff;
 }
 
 #services h2 {
@@ -236,9 +218,6 @@ nav ul li a:hover {
     padding: 20px;
 }
 
-.masonry-container{
-     background: #186aa8;
-}
 .masonry-item {
     background: white;
     padding: 15px;
@@ -326,7 +305,7 @@ h2 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; /* Allows wrapping if needed */
-    gap: 40px; /* Proper spacing between cards */
+    gap: 20px; /* Proper spacing between cards */
     align-items: stretch; /* Ensures consistent card height */
 }
 
@@ -366,7 +345,7 @@ h2 {
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 15px;
     font-size: 1rem;
     text-align: center;
 }
@@ -384,6 +363,32 @@ h2 {
     transform: rotateY(180deg);
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .flip-cards-container {
+        flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+        justify-content: center;
+    }
+    .flip-card {
+        width: 200px; /* Further reduced size for tablets */
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .flip-card {
+        width: 180px; /* Smaller cards for mobile */
+        height: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-card {
+        width: 100%; /* Full width on small screens */
+        max-width: 200px;
+        height: 230px;
+    }
+}
 
 /* Industries Section */
 #industries {
@@ -454,143 +459,27 @@ h2 {
     color: #333;
 }
 
-/* Contact Section */
-.contact-section {
-    width: 80%;
-    margin: auto;
-    padding: 40px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 900px;
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Left Side - Company Info */
-.contact-info {
-    width: 40%;
-    padding: 20px;
-    background: #007bff;
-    color: white;
-    border-radius: 8px 0 0 8px;
-}
-
-.contact-info h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.contact-info p {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.contact-info a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Right Side - Form */
-.contact-form {
-    width: 55%;
-    padding: 20px;
-    background: white;
-    border-radius: 0 8px 8px 0;
-}
-
-.contact-form h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    text-align: right;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-.submit-btn {
-    background: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.submit-btn:hover {
-    background: #0056b3;
-}
-
-#backToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: none;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-#backToTop:hover {
-    background-color: #0056b3;
-}
-
-/* Show button when scrolled down */
-.show {
-    display: block !important;
-}
-
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-        text-align: center;
+    .industries-container {
+        gap: 20px;
     }
-
-    .contact-info,
-    .contact-form {
-        width: 100%;
-        border-radius: 8px;
+    .industry-item img {
+        width: 100px;
+        height: 100px;
     }
 }
 
+/* Contact Section */
+.contact a {
+    color: #004080;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
 
 @media (max-width: 768px) {
     .slideshow-container img {
@@ -639,44 +528,6 @@ h2 {
 
     .hero-content p {
         font-size: 0.9rem;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .industries-container {
-        gap: 20px;
-    }
-    .industry-item img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .flip-cards-container {
-        flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
-        justify-content: center;
-    }
-    .flip-card {
-        width: 200px; /* Further reduced size for tablets */
-        height: 250px;
-    }
-}
-
-@media (max-width: 768px) {
-    .flip-card {
-        width: 180px; /* Smaller cards for mobile */
-        height: 240px;
-    }
-}
-
-@media (max-width: 480px) {
-    .flip-card {
-        width: 100%; /* Full width on small screens */
-        max-width: 200px;
-        height: 230px;
     }
 }
 
