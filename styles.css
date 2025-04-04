@@ -124,11 +124,13 @@ nav ul li a:hover {
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 10px;
+    color:black;
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 20px;
+    color:black;
 }
 
 /* CTA Button */
