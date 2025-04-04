@@ -415,7 +415,7 @@ section h2 {
 }
 
 .flip-card-back {
-    background: #80c0ff;
+    background: #3498db;
     color: white;
     transform: rotateY(180deg);
 }
