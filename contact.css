@@ -8,30 +8,42 @@
 
 /* Contact Section */
 .contact-section {
-  background: url('info.jpg') no-repeat center center/cover; /* light subtle blue */
-  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: url("info.jpg") no-repeat center center/cover;
+  color: white;
+  text-align: left;
+  min-height: 400px;
+  position: relative;
 }
 
 .contact-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  align-items: stretch; /* Ensures both sections take full height */
+  width: 80%;
   max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+  gap: 0px; /* Removes the space between sections */
 }
 
-.contact-info,
+.contact-info {
+  flex: 1;
+  padding: 30px;
+  background: url("info.jpg") no-repeat center center/cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .contact-form {
-  flex: 1 1 48%;
-  background: #ffffff;
-  padding: 25px;
+  flex: 1;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
 }
-
 .contact-info:hover,
 .contact-form:hover {
   transform: translateY(-5px);
