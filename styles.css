@@ -1,540 +1,365 @@
 /* General Styles */
-/* Ensure all sections take full width */
-body, html {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    width: 100%;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f8ff;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-/* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
-    background-color: #004080;
+    background: #004080;
     color: white;
+    padding: 15px 50px;
+}
+.logo {
+    display: flex;
+    flex-direction: column; /* Stack logo and text vertically */
+    align-items: center; /* Center align */
+    text-align: center;
 }
 
 .logo img {
-    height: 70px;
+    width: 100px; /* Adjust logo size */
+    height: auto;
 }
 
 .logo-text {
-    font-size:10px;
-    font-weight: bold;
-    color: white;
-    margin-left: 29px;
+    font-size: 14px; /* Small text */
+    color: white; /* Darker text for readability */
+    margin-top: 5px; /* Space between logo and text */
 }
+
 
 nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
-    gap: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
 }
 
 nav ul li a {
-    text-decoration: none;
     color: white;
-    font-weight: 600;
-    transition: 0.3s;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-nav ul li a:hover {
-    color: #00bfff;
+header nav ul li:last-child a {
+    background-color: #007BFF; /* Blue color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
 }
 
+header nav ul li:last-child a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
 
-/* Hero Section with Slideshow Background */
+/* Hero Section */
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+    height: 90vh; /* Full viewport height */
     overflow: hidden;
 }
 
-.hero .slideshow-container {
+.slideshow-container {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    display: flex;
+    animation: slideShow 12s infinite;
 }
 
 .slide {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
-
-.slide.active {
-    opacity: 1;
-}
-
-.overlay {
-    position: absolute;
+    flex: 0 0 100%;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
-    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fade 4s infinite;
 }
 
+/* Overlay for dark effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* Hero Content */
 .hero-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
+    color: #fff;
 }
 
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* CTA Button */
 .cta-button {
     display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #ffcc00;
-    color: #004080;
+    padding: 12px 24px;
+    background-color: #007bff; /* Blue button */
+    color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 1.1rem;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-    background: #ffaa00;
+    background-color: #0056b3;
 }
 
-/* Ensure containers are responsive */
-.container, .section {
-    width: 100%;
-    max-width: 1200px; /* Adjust max-width for best fit */
-    margin: 0 auto;
+/* Keyframe Animation for Slideshow */
+@keyframes slideShow {
+    0%, 100% { transform: translateX(0%); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+}
+
+@keyframes fade {
+    0% { opacity: 1; }
+    33% { opacity: 0; }
+    66% { opacity: 1; }
+}
+
+/* About Section */
+.about {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    background: white;
+}
+
+.about h2 {
+    flex: 1;
+    text-align: left;
+}
+
+.about p {
+    flex: 2;
+    text-align: right;
+}
+
+.industries-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    gap: 20px;
     padding: 20px;
+    overflow-x: auto; /* Enables horizontal scrolling if needed */
 }
 
-/* SAP Services Section */
-/* Services Section */
-#services {
+.industry-item {
     text-align: center;
-    padding: 60px 10%;
-    background-color: #f4f8ff;
+    flex-shrink: 0; /* Ensures images don't shrink */
 }
 
-#services h2 {
-    font-size: 2.5rem;
-    color: #004080;
-    margin-bottom: 40px;
+.industry-item img {
+    width: 120px; /* Adjust as needed */
+    height: 120px; /* Maintain 1:1 aspect ratio */
+    border-radius: 50%; /* Ensures the image is circular */
+    object-fit: cover; /* Ensures the image fits inside the circle */
+    border: 3px solid #004aad; /* Optional: Blue border */
+    transition: transform 0.3s ease-in-out;
 }
 
+.industry-item img:hover {
+    transform: scale(1.1);
+}
+
+.industry-item p {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/*SAP Solutions*/
+.masonry-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive column layout */
+    gap: 20px;
+}
+
+.masonry-item {
+    background: #004aad; /* Blue background */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.masonry-item:hover {
+    transform: translateY(-5px);
+}
+
+.masonry-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.masonry-item p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/*SAP Services*/
 .services-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding: 40px 20px;
 }
 
-/* Service Item */
 .service-item {
     position: relative;
-    width: 100%;
-    max-width: 350px; /* Ensures uniform size */
-    height: 300px; /* Fixed height to maintain aspect ratio */
+    width: 350px; /* Adjust width as needed */
+    height: 250px;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Text Overlay */
-.service-text {
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better readability */
-    color: white;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    transition: background 0.3s ease;
-}
-
-/* Hover Effect */
-.service-item:hover .service-text {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-/* Text Styling */
-.service-text h3 {
-    margin: 0 0 10px;
-    font-size: 1.5rem;
-}
-
-.service-text p {
-    margin: 0;
-    font-size: 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .services-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service-item {
-        max-width: 90%;
-        height: 250px;
-    }
-}
-
-/* Masonry Grid */
-.masonry-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.masonry-item {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.masonry-item:hover {
+.service-item:hover {
     transform: scale(1.05);
 }
 
-/* Sections */
-/* Initial State: Hide Sections */
-.section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* Active State: Fade In */
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-section {
-    padding: 60px 10%;
+.service-text {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px;
     text-align: center;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-h2 {
-    font-size: 2.5rem;
-    color: #004080;
-    margin-bottom: 20px;
+.service-text h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
-/* Flip Card Section */
-.flip-card-section {
-    padding: 50px 10%;
+.service-text p {
+    font-size: 14px;
+    line-height: 1.4;
 }
 
-h2 {
-    color: #004080;
-    margin-bottom: 30px;
+/* Business Solutions (Flip Cards) */
+.business-solutions {
+    padding: 50px;
+    text-align: center;
+    background: #e6e6e6;
 }
 
-.card-container {
+.flip-cards-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.slideshow-container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.slideshow-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    max-height: 500px; /* Adjust as needed */
-}
-
-/* Business Solutions Section */
-#business-solutions {
-    text-align: center;
-    padding: 60px 10%;
-    background-color: #f4f8ff;
-}
-
-/* Heading */
-#business-solutions h2 {
-    font-size: 2.5rem;
-    color: #004080;
-    margin-bottom: 40px;
-}
-
-/* Flip Cards Container */
-.flip-cards-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allows wrapping if needed */
-    gap: 20px; /* Proper spacing between cards */
-    align-items: stretch; /* Ensures consistent card height */
-}
-
-/* Individual Flip Card */
 .flip-card {
-    width: 220px; /* Reduced size */
-    height: 260px; /* Adjusted height */
+    background-color: transparent;
+    width: 250px;
+    height: 200px;
     perspective: 1000px;
-    flex: 1 1 220px; /* Ensures proper alignment */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* Flip Card Inner */
 .flip-card-inner {
+    position: relative;
     width: 100%;
     height: 100%;
+    text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    position: relative;
 }
 
-/* Flip Effect on Hover */
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-/* Front and Back of Flip Card */
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    font-size: 1rem;
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Front Side */
 .flip-card-front {
-    background-color: #004080;
+    background: #004080;
     color: white;
+    font-weight: bold;
 }
 
-/* Back Side */
 .flip-card-back {
-    background-color: #00bfff;
+    background: #ff6600;
     color: white;
     transform: rotateY(180deg);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .flip-cards-container {
-        flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
-        justify-content: center;
-    }
-    .flip-card {
-        width: 200px; /* Further reduced size for tablets */
-        height: 250px;
-    }
-}
-
-@media (max-width: 768px) {
-    .flip-card {
-        width: 180px; /* Smaller cards for mobile */
-        height: 240px;
-    }
-}
-
-@media (max-width: 480px) {
-    .flip-card {
-        width: 100%; /* Full width on small screens */
-        max-width: 200px;
-        height: 230px;
-    }
-}
-
-/* Industries Section */
-#industries {
-    text-align: center;
-    padding: 60px 10%;
-    background-color: #f4f8ff;
-}
-
-/* Center align industries and services section */
-.industries, .services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.industries-container, .services-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-#industries h2 {
-    font-size: 2.5rem;
-    color: #004080;
-    margin-bottom: 40px;
-}
-
-/* Industries Container */
-.industries-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-/* Industry Item */
-.industry-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 150px;
-}
-
-/* Circular Images */
-.industry-item img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image fills the circle without stretching */
-    border: 4px solid #004080; /* Optional: Adds a border */
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Hover Effect */
-.industry-item img:hover {
-    transform: scale(1.1);
-}
-
-/* Industry Name */
-.industry-item p {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .industries-container {
-        gap: 20px;
-    }
-    .industry-item img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
 /* Contact Section */
+.contact {
+    padding: 50px;
+    background: #004080;
+    color: white;
+    text-align: center;
+}
+
 .contact a {
-    color: #004080;
-    font-weight: bold;
+    color: #ffcc00;
     text-decoration: none;
-}
-
-.contact a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .slideshow-container img {
-        max-height: 300px; /* Reduce height for tablets */
-    }
-    
-   .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .flip-card {
-        max-width: 90%;
-        height: 280px;
-        margin: 15px 0; /* Adds more spacing between cards */
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .slideshow-container img {
-        max-height: 200px; /* Even smaller for phones */
-    }
-
-    .card-container {
-        flex-direction: column; /* Stack flip cards on small screens */
-        align-items: center;
-    }
-
-    .flip-card {
-        width: 90%; /* Take up most of the screen */
-        max-width: 250px;
-        height: 280px;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-content p {
-        font-size: 0.9rem;
-    }
+    font-weight: bold;
 }
 
 /* Footer */
 footer {
-    background-color: #004080;
-    color: white;
     text-align: center;
     padding: 20px;
+    background: #333;
+    color: white;
 }
