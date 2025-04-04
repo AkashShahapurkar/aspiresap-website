@@ -8,37 +8,37 @@
 
 /* Contact Section */
 .contact-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    padding: 50px 10%;
-    background: #f4f4f4;
+  padding: 60px 20px 40px;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+  background-color: #f5faff; 
 }
 
 /* Contact Container */
 .contact-container {
     display: flex;
-    width: 100%;
-    max-width: 1100px;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 40px;
+  max-width: 1100px;
+  width: 100%;
+  align-items: flex-start;
 }
 
 /* Left Side: Contact Info */
 .contact-info {
-    position: relative;
-    top: -20px; /* Move text upwards */
-    padding-top: 20px; /* Adjust if needed */
     flex: 1;
-    padding: 40px;
-    color: white;
-    background: url('info.jpg') no-repeat center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background-image: url('info.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .contact-info h2 {
@@ -61,9 +61,11 @@
 
 /* Right Side: Contact Form */
 .contact-form {
-    flex: 1;
-    padding: 40px;
-    background: #fff;
+  flex: 1;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form h2 {
