@@ -84,20 +84,23 @@ nav ul li a:hover {
 }
 
 .slideshow-container {
-    position: relative;
+   position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
 }
 
+.slides-wrapper {
+    display: flex;
+    width: 300%; /* Adjust based on the number of slides */
+    height: 100%;
+    transition: transform 1s ease-in-out; /* Smooth transition */
+}
 .slide {
-    position: absolute;
-    width: 100%;
+    flex: 0 0 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 .slide.active {
     opacity: 1;
