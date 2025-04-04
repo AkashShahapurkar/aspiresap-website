@@ -8,7 +8,7 @@
 
 /* Contact Section */
 .contact-section {
-  background: #f3f8ff; /* light subtle blue */
+  background: url('info.jpg') no-repeat center center/cover; /* light subtle blue */
   padding: 40px 20px;
 }
 
