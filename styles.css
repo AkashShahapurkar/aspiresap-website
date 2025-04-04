@@ -84,7 +84,7 @@ nav ul li a:hover {
 }
 
 .slideshow-container {
-   position: relative;
+    position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -94,17 +94,16 @@ nav ul li a:hover {
     display: flex;
     width: 300%; /* Adjust based on the number of slides */
     height: 100%;
-    transition: transform 1s ease-in-out; /* Smooth transition */
+    transition: transform 1s ease-in-out; /* Smooth sliding effect */
 }
+
 .slide {
     flex: 0 0 100%;
-    height: 100%;
+    height: 100vh;
     background-size: cover;
     background-position: center;
 }
-.slide.active {
-    opacity: 1;
-}
+
 /* Overlay for dark effect */
 .overlay {
     position: absolute;
