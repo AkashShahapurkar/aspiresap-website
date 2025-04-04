@@ -22,16 +22,13 @@ body {
 
 /* Header Styles */
 header {
-   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #004080;
+    color: white;
+    padding: 15px 50px;
+
 }
 
 /* Logo Container */
@@ -45,9 +42,10 @@ header {
 }
 /* Logo */
 .logo {
-   display: flex;
-  align-items: center;
-  gap: 10px;
+  display: flex;
+    flex-direction: column; /* Stack logo and text vertically */
+    align-items: center; /* Center align */
+    text-align: center;
 }
 .logo img {
   height: 70px;
@@ -69,7 +67,7 @@ header {
 
 /* Navigation */
 nav ul {
-    display: flex;
+ display: flex;
   gap: 25px;
   list-style: none;
   margin: 0;
