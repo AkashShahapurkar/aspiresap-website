@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    /*** Slideshow Functionality ***/
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
-            slide.style.transform = `translateX(${(i - index) * 100}%)`;
+            slide.classList.remove('active');
         });
+        slides[index].classList.add('active');
     }
 
     function nextSlide() {
@@ -14,11 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
         showSlide(currentSlide);
     }
 
-    if (slides.length > 0) {
-        setInterval(nextSlide, 5000); // Change slide every 5 seconds
-        showSlide(currentSlide);
-    }
-
+    setInterval(nextSlide, 3000); // Images change every 3 seconds (faster)
+    showSlide(currentSlide);
+});
     /*** Flip Card Hover Effect ***/
     document.querySelectorAll('.flip-card').forEach(card => {
         const inner = card.querySelector('.flip-card-inner');
