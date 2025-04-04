@@ -44,15 +44,18 @@ document.addEventListener('DOMContentLoaded', function () {
     checkScroll(); // Run once on load
 
     /*** Back to Top Button ***/
-    const backToTopButton = document.getElementById("backToTop");
-
-    if (backToTopButton) {
-        window.addEventListener("scroll", function () {
-            backToTopButton.classList.toggle("show", window.scrollY > 300);
-        });
-
-        backToTopButton.addEventListener("click", function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+    // Show/hide Back to Top button based on scroll position
+window.onscroll = function () {
+    var button = document.getElementById("backToTop");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        button.classList.add("show");
+    } else {
+        button.classList.remove("show");
     }
+};
+
+// Scroll smoothly to the top
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 });
