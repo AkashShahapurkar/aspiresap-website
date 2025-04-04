@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    /*** Slideshow Functionality ***/
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
 
@@ -13,67 +14,53 @@ document.addEventListener('DOMContentLoaded', function () {
         showSlide(currentSlide);
     }
 
-    setInterval(nextSlide, 5000); // Change slide every 5 seconds
-    showSlide(currentSlide);
-});
+    if (slides.length > 0) {
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        showSlide(currentSlide);
+    }
 
-document.addEventListener("DOMContentLoaded", showSlides);
-
-document.querySelectorAll('.flip-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.querySelector('.flip-card-inner').style.transform = 'rotateY(180deg)';
+    /*** Flip Card Hover Effect ***/
+    document.querySelectorAll('.flip-card').forEach(card => {
+        const inner = card.querySelector('.flip-card-inner');
+        if (inner) {
+            card.addEventListener('mouseenter', () => inner.style.transform = 'rotateY(180deg)');
+            card.addEventListener('mouseleave', () => inner.style.transform = 'rotateY(0deg)');
+        }
     });
 
-    card.addEventListener('mouseleave', () => {
-        card.querySelector('.flip-card-inner').style.transform = 'rotateY(0deg)';
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
+    /*** Scroll-Based Animations ***/
     const sections = document.querySelectorAll("section");
-    
-    function checkScroll() {
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            if (sectionTop < windowHeight - 50) {
-                section.classList.add("visible");
-            }
-        });
-    }
-
-    window.addEventListener("scroll", checkScroll);
-    checkScroll();
-});
-
-// Show/hide Back to Top button based on scroll position
-window.onscroll = function () {
-    var button = document.getElementById("backToTop");
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        button.classList.add("show");
-    } else {
-        button.classList.remove("show");
-    }
-};
-
-// Scroll smoothly to the top
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-document.addEventListener("DOMContentLoaded", function () {
     const vmvBoxes = document.querySelectorAll(".vmv-box");
 
     function checkScroll() {
-        vmvBoxes.forEach((box) => {
-            const boxTop = box.getBoundingClientRect().top;
-            if (boxTop < window.innerHeight - 50) {
+        const windowHeight = window.innerHeight;
+
+        sections.forEach(section => {
+            if (section.getBoundingClientRect().top < windowHeight - 50) {
+                section.classList.add("visible");
+            }
+        });
+
+        vmvBoxes.forEach(box => {
+            if (box.getBoundingClientRect().top < windowHeight - 50) {
                 box.style.opacity = "1";
             }
         });
     }
 
     window.addEventListener("scroll", checkScroll);
-    checkScroll();
-});
+    checkScroll(); // Run once on load
 
+    /*** Back to Top Button ***/
+    const backToTopButton = document.getElementById("backToTop");
+
+    if (backToTopButton) {
+        window.addEventListener("scroll", function () {
+            backToTopButton.classList.toggle("show", window.scrollY > 300);
+        });
+
+        backToTopButton.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+});
