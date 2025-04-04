@@ -34,16 +34,14 @@
     /*** Back to Top Button ***/
     // Show/hide Back to Top button based on scroll position
 window.onscroll = function () {
-    var button = document.getElementById("backToTop");
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        button.classList.add("show");
-    } else {
-        button.classList.remove("show");
-    }
-};
+        var button = document.getElementById("backToTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            button.classList.add("show");
+        } else {
+            button.classList.remove("show");
+        }
+    };
 
-// Scroll smoothly to the top
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-});
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
