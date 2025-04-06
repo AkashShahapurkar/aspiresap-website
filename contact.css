@@ -56,7 +56,13 @@
 
 .contact-info p{
     margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.contact-info p a{
+  margin-bottom: 15px;
+  font-size: 16px;
   color: #fff;
 }
 .contact-form label {
