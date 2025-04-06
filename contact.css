@@ -43,14 +43,22 @@
   border-radius: 0;
 }
 
-.contact-info h2,
+.contact-info h2{
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #fff;
+}
 .contact-form h2 {
   margin-bottom: 15px;
   font-size: 24px;
   color: #003366;
 }
 
-.contact-info p,
+.contact-info p{
+    margin-bottom: 15px;
+  font-size: 24px;
+  color: #fff;
+}
 .contact-form label {
   font-size: 16px;
   line-height: 1.6;
